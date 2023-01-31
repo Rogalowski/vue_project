@@ -1,14 +1,32 @@
-<script>
+<script setup>
+import {ref} from 'vue'
+const msgr = ref("Hello, Here is List")
+const listArray = ref([
+  "1 One",
+  "2 Two",
+  "3 Three",
+  "4 Four",
+])
 </script>
 
 
 <template>
-  <main>
-  <div class="about">
-    <h1>This is an about page</h1>
 
+<div class="about"><input v-model="msgr">
+  <div class="about">
+    <h1>  {{ msgr }}</h1>
   </div>
-</main>
+    <ul>
+  <li v-for="ele in listArray" v-bind:key="ele">{{ele}}</li>
+</ul>
+  </div>
+
+
+
+
+
+
+
 </template>
 
 <style>
