@@ -36,15 +36,9 @@ const countInput = computed(() =>{
 
 
     <ul>
-  <li v-for="ele in listArray" :key="ele">{{ele}}</li>
-</ul>
+      <li v-for="ele in listArray" :key="ele">{{ele}}</li>
+    </ul>
   </div>
-
-
-
-
-
-
 
 </template>
 
