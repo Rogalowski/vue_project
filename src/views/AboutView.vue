@@ -1,5 +1,5 @@
 <script setup>
-import {ref} from 'vue'
+import {ref, computed} from 'vue'
 const msgr = ref("Hello, Here is List")
 const listArray = ref([
   "1 One",
@@ -7,17 +7,36 @@ const listArray = ref([
   "3 Three",
   "4 Four",
 ])
+const inputText = ref("")
+const saveItem = (input) => {
+  listArray.value.push(input)
+  inputText.value = ""
+
+}
+const countInput = computed(() =>{
+  return inputText.value.length
+})
 </script>
 
 
 <template>
+   <div class="about">
+      <form
 
-<div class="about"><input v-model="msgr">
-  <div class="about">
-    <h1>  {{ msgr }}</h1>
+      @submit.prevent="saveItem(inputText)"
+      >
+
+  <div ><input type="text" v-model="inputText"> <p>{{ countInput }}/100</p>
+    <button type="submit"> Save</button>
   </div>
+      </form>
+
+
+    <h1>  {{ msgr }} {{ inputText }}</h1>
+
+
     <ul>
-  <li v-for="ele in listArray" v-bind:key="ele">{{ele}}</li>
+  <li v-for="ele in listArray" :key="ele">{{ele}}</li>
 </ul>
   </div>
 
