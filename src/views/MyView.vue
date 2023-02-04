@@ -1,15 +1,45 @@
+<script setup>
+import {ref, computed} from 'vue'
+const msgr = ref("Hello, Here is List")
+const listArray = ref([
+  "1 One",
+  "2 Two",
+  "3 Three",
+  "4 Four",
+])
+const inputText = ref("")
+const saveItem = (input) => {
+  listArray.value.push(input)
+  inputText.value = ""
 
-
-
+}
+const countInput = computed(() =>{
+  return inputText.value.length
+})
+</script>
 
 
 <template>
-  <main>
-  <div class="myview">
-    <h1>This is an about page</h1>
+   <div class="about">
+      <form
 
+      @submit.prevent="saveItem(inputText)"
+      >
+
+  <div ><input type="text" v-model="inputText"> <p>{{ countInput }}/100</p>
+    <button type="submit"> Save</button>
   </div>
-</main>
+      </form>
+
+
+    <h1>  {{ msgr }} {{ inputText }}</h1>
+
+
+    <ul>
+      <li v-for="ele in listArray" :key="ele">{{ele}}</li>
+    </ul>
+  </div>
+
 </template>
 
 <style>
