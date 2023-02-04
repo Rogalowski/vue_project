@@ -1,29 +1,48 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
+<script>
+import dataJson from "./data/data.json"
+export default ({
+    data() {
+
+    return{
+        destiantionRouter: dataJson.destinations
+      }
+}
+})
 </script>
 
+
+
+
 <template>
-  <header>
+
+    <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
+    <div id="nav" class="wrapper">
 
 
-      <nav>
-        Yeah!!! <br>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/myview">MyView</RouterLink>
-      </nav>
-    </div>
-      <div class="container">
-        <router-view></router-view>
+
+
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link> |
+        <router-link to="/myview">MyView</router-link>
+        <router-link
+        v-for="destination in destiantionRouter"
+        :key="destination.id"
+        :to="destination.slug"
+        >
+        <h2>{{ destination.name}}</h2>
+        <img :src="`src/assets/images/${destination.image}`" alt="destination.name">
+        </router-link>
 
     </div>
   </header>
-
-  <RouterView />
+  <div class="container" >
+        <router-view/>
+    </div>
 </template>
+
+
 
 <style scoped>
 

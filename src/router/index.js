@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
-import MyView from "../views/MyView.vue";
+import Hawaii from "../views/Hawaii.vue";
+import Jamaica from "../views/Jamaica.vue";
+import Panama from "../views/Panama.vue";
 
 const routes = [
     {
@@ -11,15 +13,35 @@ const routes = [
     {
         path: "/myview",
         name: "myview",
-        component: MyView,
+        component: () => import("../views/MyView.vue"),
     },
     {
         path: "/about",
         name: "about",
+        component: () => import("../views/AboutView.vue"),
+    },
+    {
+        path: "/hawaii",
+        name: "hawaii",
+        component: Hawaii,
+    },
+    {
+        path: "/jamaica",
+        name: "jamaica",
+        component: Jamaica,
+    },
+    {
+        path: "/panama",
+        name: "panama",
+        component: Panama,
+    },
+    {
+        path: "/brazil",
+        name: "brazil",
         // route level code-splitting
         // this generates a separate chunk (About.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
-        component: () => import("../views/AboutView.vue"),
+        component: () => import("../views/Brazil.vue"),
     },
 ];
 
