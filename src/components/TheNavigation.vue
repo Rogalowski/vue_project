@@ -19,14 +19,15 @@ export default ({
 
 
 
-
+        <router-link id="logo" to="/">Vue</router-link>
         <router-link to="/">Home</router-link>
         <router-link to="/about">About Dest</router-link>
         <router-link to="/myview">MyView</router-link>| &nbsp;
         <router-link
         v-for="destination in destiantionRouter"
         :key="destination.id"
-        :to="destination.slug"
+        :to="{name: 'destination.show', params:{id: destination.id, slug: destination.slug}} || destination.slug"
+
         >
         {{ destination.name}}
         <!-- <img class="img" :src="`src/assets/images/${destination.image}`" alt="destination.name"> -->

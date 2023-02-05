@@ -10,6 +10,10 @@ export default{
 
 <template>
  <TheNavigation/>
+ <!-- <div class="container">
+  <router-view :key="$route.path"></router-view> //this.$watch is alternative in DestinationShow view
+
+ </div> -->
 </template>
 
 

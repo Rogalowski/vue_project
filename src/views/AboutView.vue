@@ -21,7 +21,8 @@ export default ({
     <router-link
         v-for="destination in destiantionRouter"
         :key="destination.id"
-        :to="destination.slug"
+        :to="{name: 'destination.show', params:{id: destination.id, slug: destination.slug}} || destination.slug"
+
         >
         <h2>{{ destination.name}}</h2>
         <img class="img" :src="`src/assets/images/${destination.image}`" alt="destination.name">
