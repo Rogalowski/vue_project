@@ -21,6 +21,11 @@ const routes = [
         component: () => import("../views/AboutView.vue"),
     },
     {
+        path: "/brazil",
+        name: "brazil",
+        component: () => import("../views/Brazil.vue"),
+    },
+    {
         path: "/hawaii",
         name: "hawaii",
         component: Hawaii,
@@ -34,14 +39,6 @@ const routes = [
         path: "/panama",
         name: "panama",
         component: Panama,
-    },
-    {
-        path: "/brazil",
-        name: "brazil",
-        // route level code-splitting
-        // this generates a separate chunk (About.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import("../views/Brazil.vue"),
     },
 ];
 
