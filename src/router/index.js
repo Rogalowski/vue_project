@@ -25,6 +25,7 @@ const routes = [
         name: "brazil",
         component: () => import("../views/Brazil.vue"),
     },
+
     {
         path: "/hawaii",
         name: "hawaii",
@@ -39,6 +40,10 @@ const routes = [
         path: "/panama",
         name: "panama",
         component: Panama,
+    },
+    {
+        path: "/destination/:id",
+        component: () => import("../views/DestinationShow.vue"),
     },
 ];
 

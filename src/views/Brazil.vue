@@ -1,8 +1,6 @@
 <template>
     <div class="brazil">
 
-
-
      <h1> Brazil  </h1>
 
 
