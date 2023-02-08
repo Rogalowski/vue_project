@@ -36,14 +36,21 @@ const routes = [
         name: "jamaica",
         component: Jamaica,
     },
+
     {
         path: "/panama",
         name: "panama",
         component: Panama,
+        props: {
+            somePropValue: "some value",
+            newsletterPopup: false,
+        },
     },
     {
         path: "/destination/:id/:slug",
         name: "destination.show",
+        // props: true,
+        props: (route) => ({ id: parseInt(route.params.id) }),
         component: () => import("../views/DestinationShow.vue"),
     },
 ];

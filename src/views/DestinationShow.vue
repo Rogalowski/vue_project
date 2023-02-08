@@ -1,18 +1,24 @@
 <script>
-// import dataJson from "../data/data.json"
+import dataJson from "../data/data.json"
 export default  {
-    data(){
-        return {
-            destination: null,
-        }
+    // data(){
+    //     return {
+    //         destination: null,
+    //     }
+    // },
+    props:{
+        id: {type: String, required: true}
     },
     computed: {
-        destinationId(){
-            return parseInt(this.$route.params.id)
-        },
-        // destination(){
+        // destinationId(){  //standard use from $route and dataJSON
+        //     return parseInt(this.$route.params.id)
+        // },
+        // destination(){ //standard use from $route and dataJSON
         //     return dataJson.destinations.find(destination => destination.id === this.destinationId)
         // }
+        destination(){  // use with id props instead of $route with dataJSON
+            return dataJson.destinations.find(destination => destination.id === parseInt(this.id))
+        }
     },
     methods:{
         async initData(){
@@ -20,6 +26,7 @@ export default  {
         this.destination = await response.json()
         }
     },
+
     async created(){
         this.initData()
 
@@ -27,7 +34,7 @@ export default  {
 
         //watch is alternetive to rerender the componnets in App.vue <router-view :key="$route.path"></router-view>
         this.$watch(
-            () => this.$route.params,this.initData
+            () => this.$route.params, this.initData
             // async()=>{ // rerun request response after clikc on other destination
             //code of initData method
             // }
