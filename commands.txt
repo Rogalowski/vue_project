@@ -1,0 +1,130 @@
+net user SIGNUM /DOMAIN
+git log --all
+git add .
+git rm --cached filename   - usuniecie plaiku z commita przed pushem
+Revert from pushed commit, single file: 
+git checkout  3de02d8a3 (MASTER ID) -- cand_gsn.xlsm 
+add the reverted file: git commit cand_gsn.xlsm: 
+commit the reverted file to your latest commit$ git commit --amend
+ 
+https://stackoverflow.com/questions/2532234/how-to-run-a-makefile-in-windows
+build jest budowany na podstawie 	models/packet_core/pcc/pcc_rules/pcc_resource_size_limits.csv build na: models\packet_core\pcc\build\expanded_csv\pcc_resource_size_limits.csv
+ 
+    PCCANDI-4861 Input field ranges are not updated after changing PCC release
+ 
+testy SELENIUM:
+DEBUG=1 DEV_MODE=1 SERVER_MODE="E2E" python webAPI/manage.py test --no-input --keepdb e2e.test_import_legacy
+ 
+Unit testy:
+python -m test
+python -m ctt -r
+python ctt.py - -run  --single_run -s   in ctt folder
+python manage.py test api_app.tests.test_import_excel_endpoint -v3
+ 
+make run
+make ctt_run
+export PATH=$PATH:"/c/GnuWin32/bin"   make complete
+ 
+git branch -r
+Here are the steps to deliver bug fix commits to CANDI2 release branch, v1.0:
+Switch to release branch (‘git switch release/v1.0’)
+Make a changes and commit them (git commit -m “….”)
+Push the changes to gerrit on origin release/v1.0 branch (git push --follow-tags origin HEAD:refs/for/release/v1.0)
+ 
+pnpm eslint --config .eslintrc --quiet src/components/modals/useChartModal.ts
+ 
+git push gitlab --mirror git push github --mirror
+git commit -m "PCCANDI-3094 Change navigation according to EDS"
+git commit --amend    - aktualziacja messege commit przez otwarcie pliku
+git push --follow-tags origin HEAD:refs/for/master
+git fetch --all     --pobieranie do brancha z checkoutowanego ale nie merguje
+git pull --rebase     ---git pull does git fetch and git merge together 
+git pull origin master
+git pull origin master --rebase    - bezpiecznie powraca na mastera ze swoimi zmianami i aktualizuje od razu wszystko
+git reset --hard origin/master
+git pull origin master --rebase
+git reset origin/master
+git reset HEAD~0 - unstash undelivered commit - OK when typed git amend instead of git commit    
+git reset HEAD^ - unstash undelivered commit  - OK when COMMIT
+git ls-remote | grep $(git rev-parse HEAD)
+ci/candi2_deploy_trigger.sh test true 5a4a016d181e041788871f1087b6f1fe342cbd5e        refs/changes/11/18727811/2
+ 
+GDY NIE SKOMMITOWANE:
+git stash
+git checkout <inny_commit>
+git stash pop
+ 
+import base64
+b = base64.b64encode(bytes('!1$IGNUMt0urnam3nt', 'utf-8'))
+print(b)
+ 
+CHERRY PICK PRZEJSCIE NA COMMITA
+TEs?  git reset --hard  50c6510a8fb9d45b3501df7d6176b1bd1eb7c11a
+ 
+export PYTHONPATH="${PYTHONPATH}/c/Users/ZROGJAC/PROJECTS/candi/webAPI"
+ 
+alias make='winpty make.exe'
+alias eclose='scripts/close_and_checkout_excel_docs.py'
+alias ekill='scripts/kill_all_excel_instances.bat'
+alias deliver='git push --follow-tags origin HEAD:refs/for/master'  
+alias ce='cd ~/Desktop/candi_dev/candi-epg'
+alias cc='scripts/close_and_checkout_excel_docs.py'
+alias kill='~/Desktop/candi_dev/candi-epg/scripts/kill_all_excel_instances.bat'
+alias amend='git commit --amend --no-edit'
+alias xls='python scripts/XlsUnit_compile_and_run.py'
+alias log='git log --oneline'
+alias test='make test-quick'
+alias mypy='make test-mypy'
+alias master="git checkout master"alias python='winpty python.exe' 
+alias candi2_311='source /c/Users/ZROGJAC/VENV/candivenv/Scripts/activate'
+alias candi2='source /c/Users/ZROGJAC/PROJECTS/candi/venv/Scripts/activate'
+alais candi2Win='source C:\Users\ZROGJAC\PROJECTS\candi\venv\Scripts\activate'
+alias webAPI='python /c/Users/ZROGJAC/PROJECTS/candi/webAPI/manage.py runserver 5400'
+alias candi-epg='source /c/Users/ZROGJAC/VENV/candi-epg/Scripts/activate'
+alias test-venv='source /c/Users/ZROGJAC/VENV/openpyxl/Scripts/activate'
+ 
+Logging to file
+    file_name=C:\Users\ervpeka\AppData\Local\Temp\epg_data\output_main.log
+Logging ExcelMonitorThread
+    file_name=C:\Users\ervpeka\AppData\Local\Temp\epg_data\output_excel_monitor.log
+ 
+ 
+Toolse:
+python tools/formula_parser/formula_parser.py -f "=OR(TEST_A1, TEST_B1)" -r "new_test.txt" -wb "test.xlsm" -ws "first"
+ 
+python manage.py dumpdata auth.User --indent 4 > fixtures/2023_06_28_fixture_auth_Users.json
+python manage.py dumpdata api_app.UserProfile --indent 4 > fixtures/2023_06_28_fixture_UserProfile.json
+ 
+ 
+TYPE SCRIPT:
+c:\Users\ZROGJAC\PROJECTS\candi\frontend\node_modules\.bin\tsc.cmd -p c:\Users\ZROGJAC\PROJECTS\candi\frontend\tsconfig.json  https://code.visualstudio.com/docs/editor/tasks#vscode
+ 
+pnpm eslint --fix ./test/excelparse.test.ts
+pnpm eslint --fix ./src/composables/parser/ParserLogic.ts
+pnpm vue-tsc --noEmit
+ 
+pnpm typecheck
+tsc -p tsconfig.json
+pnpm tsc -p tsconfig.json -w
+tsc -w   
+pnpm build-stage
+find . -iname '*.js' -not -path "./*" -exec rm -f {} +
+ 
+RUN SERVER PROD:
+pnpm build
+DEV_MODE=0
+./webAPI: python manage.py collectstatic
+ 
+python manage.py dumpdata auth.User --indent 4 > fixtures/2023_06_30_fixture_auth_User.json
+python manage.py dumpdata api_app.UserProfile --indent 4 > fixtures/2023_06_30_fixture_UserProfile.json
+ 
+python manage.py dumpdata api_app.ProductConfigParameter --indent 4 > fixtures/2023_06_30_fixture_ProductConfigParameter.json
+python manage.py dumpdata api_app.ProductConfig --indent 4 > fixtures/2023_06_30_fixture_ProductConfig.json
+python manage.py dumpdata api_app.PCParamsOrder --indent 4 > fixtures/2023_06_30_fixture_PCParamsOrder.json
+ 
+python manage.py dumpdata api_app --indent 4 > fixtures/2023_06_30_fixture_Candi2_Initial_All_Data.json
+python manage.py dumpdata api_app.Branch --indent 4 > fixtures/2023_06_30_fixture_Branch.json
+python manage.py dumpdata api_app.TrafficModel --indent 4 > fixtures/2023_06_30_fixture_TrafficModel.json
+python manage.py dumpdata api_app.TrafficModelParameter --indent 4 > fixtures/2023_06_30_fixture_TrafficModelParameter.json
+ 
+PCCANDI-3706 Implement basic IoT TM template
